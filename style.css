@@ -1625,6 +1625,28 @@ body.theme-dracula .nav-toggle-btn:hover {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  position: relative;
+  animation: pulse-bot 2s infinite;
+}
+
+.chatbot-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ff5555;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid #282a36;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse-bot {
+  0% { box-shadow: 0 0 0 0 rgba(189, 147, 249, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(189, 147, 249, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(189, 147, 249, 0); }
 }
 
 .chatbot-toggle:hover {

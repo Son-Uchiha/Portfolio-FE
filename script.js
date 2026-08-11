@@ -171,19 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter") handleSendMessage();
     });
 
-    // Đóng chatbot khi người dùng cuộn trang
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (Math.abs(window.scrollY - lastScrollY) > 150) {
-          if (!chatWindow.classList.contains("hidden")) {
-            chatWindow.classList.add("hidden");
-          }
-          lastScrollY = window.scrollY;
-        }
-      },
-      { passive: true },
-    );
+    // Đóng chatbot khi người dùng cuộn trang đã được tắt
   }
 
   async function handleSendMessage() {
@@ -220,6 +208,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.status === 401) {
           appendMessage(
             "Xin lỗi, hệ thống AI của Google hiện đang bảo trì định dạng API Key nên tạm thời không thể trả lời. Bạn vui lòng xem thông tin chi tiết của tôi ở các mục bên trên hoặc liên hệ trực tiếp qua Email nhé!",
+            "bot",
+          );
+        } else if (response.status === 429) {
+          appendMessage(
+            "Hệ thống AI hiện đang quá tải do vượt quá giới hạn truy cập miễn phí. Bạn vui lòng thử lại sau khoảng 1 phút nữa hoặc liên hệ trực tiếp với mình qua Email nhé!",
             "bot",
           );
         } else {
