@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===== CHATBOT LOGIC ===== */
   // API URL giờ đây trỏ về Backend nội bộ của chúng ta thay vì gọi trực tiếp Google
   const API_URL = "https://portfolio-be-szli.onrender.com/api/chat";
+  // const API_URL = "http://localhost:3000/api/chat";
 
   const toggleBtn = document.getElementById("chatbotToggleBtn");
   const closeBtn = document.getElementById("chatbotCloseBtn");
