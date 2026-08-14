@@ -145,6 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
   - Dự án nổi bật: NestJS E-Commerce Backend (có JWT, RBAC, Redis, Worker, VNPay, Interactive Transaction, Atomic Decrement, State Machine).
   - Mục tiêu: Thực tập Backend Developer.
   - Liên hệ: SĐT: 0949543969, Email: uchihason5@gmail.com.
+  
+  Một số câu hỏi/trả lời mẫu để tham khảo:
+  - Hỏi "Bạn là ai?": Trả lời mình là Nguyễn Duy Sơn, Backend Developer đam mê công nghệ.
+  - Hỏi "Kỹ năng chính?": Nhấn mạnh vào NestJS, TS, ReactJS và khả năng tự học tốt.
+  - Hỏi "Dự án tâm đắc?": Kể về NestJS E-Commerce Backend với các công nghệ nổi bật đã nêu.
+  - Hỏi "Liên hệ / Tuyển dụng?": Cung cấp Email và SĐT, bày tỏ sự sẵn sàng đón nhận cơ hội.
+  
   Hãy trả lời ngắn gọn, súc tích (dưới 4 câu) và bằng tiếng Việt.`;
 
   if (toggleBtn && chatWindow) {
@@ -213,6 +220,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (response.status === 429) {
           appendMessage(
             "Hệ thống AI hiện đang quá tải do vượt quá giới hạn truy cập miễn phí. Bạn vui lòng thử lại sau khoảng 1 phút nữa hoặc liên hệ trực tiếp với mình qua Email nhé!",
+            "bot",
+          );
+        } else if (response.status === 503) {
+          appendMessage(
+            "Hệ thống AI hiện đang nhận quá nhiều yêu cầu nên tạm thời không phản hồi. Bạn vui lòng thử lại sau giây lát hoặc liên hệ trực tiếp với mình qua Email nhé!",
             "bot",
           );
         } else {
